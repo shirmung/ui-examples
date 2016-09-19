@@ -1,0 +1,49 @@
+html, body {
+  font-family: Courier;
+  font-size: 20px;
+}
+
+form {
+  width: 500px;
+  margin: 50px auto;
+}
+
+label {
+  text-transform: uppercase;
+}
+
+input {
+  width: 100%;
+  height: 50px;
+  margin: 15px 0;
+  padding: 0 15px;
+  border: none;
+  font-family: Courier;
+  font-size: 20px;
+  line-height: 50px;
+  box-sizing: border-box; /* enhancement: cross browser support */
+}
+
+input[type=text], input[type=password] {
+  background-color: black;
+  color: white;
+}
+
+input[type=submit] {
+  border: 1px solid black;
+  background-color: lavender;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.error {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background-color: lavender;
+  text-align: center;
+  box-sizing: border-box; /* enhancement: cross browser support */
+}
