@@ -1,47 +1,66 @@
+html, body {
+  font-family: Courier;
+  font-size: 20px;
+}
+
 nav {
   float: left;
   width: 100%;
+  height: 50px;
   background-color: lavender;
 }
 
 .fa-diamond {
   display: none;
   float: right;
-  margin: 15px;
+  padding: 0 15px;
+  line-height: 50px;
   cursor: pointer;
 }
 
+.fa-diamond:hover {
+  color: magenta;
+}
+
 ul {
-  display: block;
   float: right;
 }
 
 ul li {
   display: inline-block;
-  padding: 15px;
-  box-sizing: border-box; /* enhancement: cross browser support */
+  padding: 0 15px;
+  box-sizing: border-box; /* improvement: cross browser support */
 }
 
 ul li a {
-  font-family: Courier;
+  line-height: 50px;
   text-transform: uppercase;
   text-decoration: none;
   color: black;
 }
 
+ul li a:hover {
+  text-decoration: underline;
+  color: magenta;
+}
+
 @media (max-width: 767px) {
-  ul {
-    display: none;
-    width: 100%;
-    border-top: 1px solid black;
+  nav {
+    height: auto;
   }
 
   .fa-diamond {
     display: block;
   }
 
+  ul {
+    display: none;
+    width: 100%;
+    border-top: 1px solid black;
+  }
+
   ul li {
     width: 100%;
     border-bottom: 1px solid black;
-  }
+  } 
 }

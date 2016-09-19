@@ -24,13 +24,11 @@
     <script>
       $(document).ready(function() {
         $(".login").submit(function(event) {
-          // prevent form from "submitting" and page from refreshing
           event.preventDefault();
 
           var username = $(".username").val();
           var password = $(".password").val(); 
 
-          // enhancement: username and password validation should happen server-side for security
           if (username === "shirmung" && password === "woof") {
             window.location.href = "http://shirmung.com";
           } else {

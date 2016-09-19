@@ -18,32 +18,38 @@ input {
   margin: 15px 0;
   padding: 0 15px;
   border: none;
+  line-height: 50px;
   font-family: Courier;
   font-size: 20px;
-  line-height: 50px;
-  box-sizing: border-box; /* enhancement: cross browser support */
+  box-sizing: border-box; /* improvement: cross browser support */
 }
 
-input[type=text], input[type=password] {
+input[type="text"], input[type="password"] {
   background-color: black;
   color: white;
 }
 
-input[type=submit] {
+input[type="submit"] {
   border: 1px solid black;
   background-color: lavender;
   text-transform: uppercase;
   cursor: pointer;
 }
 
+input[type="submit"]:hover {
+  border: 1px solid magenta;
+  color: magenta;
+}
+
 .error {
   display: none;
   position: fixed;
-  bottom: 0;
   left: 0;
+  bottom: 0;
   width: 100%;
-  padding: 15px;
+  height: 50px;
   background-color: lavender;
+  line-height: 50px;
   text-align: center;
-  box-sizing: border-box; /* enhancement: cross browser support */
+  box-sizing: border-box; /* improvement: cross browser support */
 }

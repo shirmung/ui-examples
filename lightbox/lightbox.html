@@ -13,29 +13,25 @@
 
     <div class="lightbox">
       <div class="overlay"></div>
-      <a class="close">Close</a>
+      <a class="close" href="#">Close</a>
       <img class="enlarged-image" src="">
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script>
       $(document).ready(function() {
-        // bind click event to thumbnails
         $(".thumbnail").click(function() {
-          // disable scroll
           $("body").css("overflow", "hidden");
 
-          // use src of thumbnail as src of enlarged image
           $(".lightbox .enlarged-image").attr("src", $(this).attr("src"));
           $(".lightbox").show();
         });
 
-        // bind click event to gallery overlay and close link
-        $(".overlay, .close").click(function() {
-          // enable scroll
+        $(".overlay, .close").click(function(event) {
+          event.preventDefault();
+
           $("body").css("overflow", ""); 
 
-          // clear src of enlarged image
           $(".lightbox .enlarged-image").attr("src", ""); 
           $(".lightbox").hide();
         });

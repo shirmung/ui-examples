@@ -3,17 +3,18 @@
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
-    <link rel="stylesheet" type="text/css" href="scroll.css">
+    <link rel="stylesheet" type="text/css" href="animated-header.css">
   </head>
 
   <body>
     <nav>
-      <i class="fa fa-diamond"></i>
       <ul>
         <li><a href="#">About</a></li>
         <li><a href="#">Donate</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
+
+      <div class="tab"><i class="fa fa-arrow-down"></i></div>
     </nav>
 
     <div class="hero"></div>
@@ -53,48 +54,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script>
       $(document).ready(function() {
-        $(".fa-diamond").click(function() {
-          if ($("ul").hasClass("open")) {
-            $("ul").slideUp();
-            $("ul").removeClass("open");
-          } else {
-            $("ul").slideDown();
-            $("ul").addClass("open");
-          }
+        $(".tab").click(function() {
+          $("nav").css("top", 0);
         });
 
-        var timeout = null;
-
+        /* improvement: debounce for performance */
         $(window).scroll(function() {
-          if (!timeout) {
-            // tl;dr setting timeout for browser performance
-            timeout = setTimeout(function() {
-              clearTimeout(timeout);
-              timeout = null;
-
-              // when the user has scrolled 500px
-              if ($(window).scrollTop() >= 500) {
-                // set up alternate navigation view
-                $("ul").hide();
-
-                $("ul").css({
-                  width: "100%",
-                  borderTop: "1px solid black"
-                });
-
-                $("ul li").css({
-                  width: "100%",
-                  borderBottom: "1px solid black"
-                });
-
-                $(".fa-diamond").show();
-              } else {
-                // remove alternate navigation view
-                $("ul").attr("style", "");
-                $("ul li").attr("style", "");
-                $(".fa-diamond").attr("style", "");
-              }
-            }, 250);
+          if ($(window).scrollTop() < 500) {
+            $(".tab").hide();
+            $("nav").css("top", 0);
+          } else {
+            $(".tab").show();
+            $("nav").css("top", -50);
           }
         });
       });
