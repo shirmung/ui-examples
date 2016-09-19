@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="nav-mobile.css">
+  </head>
+
+  <body>
+    <nav>
+      <i class="fa fa-diamond"></i>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Donate</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        // add inline styles on mouseenter event
+        $("ul li a").mouseenter(function() {
+          $(this).css({
+            color: "magenta",
+            textDecoration: "underline"
+          });
+
+          // alternative syntax:
+          // $(this).css("color", "magenta");
+          // $(this).css("text-decoration", "underline");
+        });
+
+        // reset inline styles on mouseleave event
+        $("ul li a").mouseleave(function() {
+          $(this).attr("style", "");
+        });
+
+        // bind click event to diamond icon
+        $(".fa-diamond").click(function() {
+          // toggle between two states using the open class
+          if ($("ul").hasClass("open")) {
+            $("ul").slideUp(); // hide
+            $("ul").removeClass("open");
+          } else {
+            $("ul").slideDown(); // show
+            $("ul").addClass("open");
+          }
+        });
+
+        // reset inline styles on resize event
+        // enhancement: debounce for performance
+        $(window).resize(function() {
+          $("ul").attr("style", "");
+        });
+      });
+    </script>
+  </body>
+</html>

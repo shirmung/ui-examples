@@ -1,0 +1,47 @@
+nav {
+  float: left;
+  width: 100%;
+  background-color: lavender;
+}
+
+.fa-diamond {
+  display: none;
+  float: right;
+  margin: 15px;
+  cursor: pointer;
+}
+
+ul {
+  display: block;
+  float: right;
+}
+
+ul li {
+  display: inline-block;
+  padding: 15px;
+  box-sizing: border-box; /* enhancement: cross browser support */
+}
+
+ul li a {
+  font-family: Courier;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+}
+
+@media (max-width: 767px) {
+  ul {
+    display: none;
+    width: 100%;
+    border-top: 1px solid black;
+  }
+
+  .fa-diamond {
+    display: block;
+  }
+
+  ul li {
+    width: 100%;
+    border-bottom: 1px solid black;
+  }
+}
