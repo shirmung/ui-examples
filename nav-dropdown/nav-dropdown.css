@@ -1,0 +1,49 @@
+html, body {
+  font-family: Courier;
+  font-size: 20px;
+}
+
+nav {
+  float: left;
+  width: 100%;
+  height: 50px;
+  background-color: lavender;
+}
+
+ul.nav {
+  position: relative;
+  float: right;
+}
+
+ul.sub-nav {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 150px;
+  background-color: lavender;
+}
+
+ul li {
+  display: inline-block;
+  width: 150px;
+  padding: 0 15px;
+  text-align: center;
+  box-sizing: border-box; /* improvement: cross browser support */
+}
+
+ul li a {
+  line-height: 50px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+}
+
+ul li.dropdown:hover ul.sub-nav {
+  display: block;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+  color: magenta;
+}
