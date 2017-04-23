@@ -1,0 +1,38 @@
+html, body {
+  font-family: Courier;
+  font-size: 20px;
+}
+
+.tile {
+  position: relative;
+  float: left;
+  width: 300px;
+  height: 200px;
+  margin: 15px;
+  cursor: pointer;
+}
+
+.tile:hover .tile-header {
+  display: block;
+}
+
+.tile-image {
+  width: 100%;
+  height: 100%;
+  background-image: url("https://www.samoyedclubofamerica.org/wp-content/uploads/2014/12/latesummersnow-USED.jpg");
+  background-size: cover; /* improvement: cross browser support */
+}
+
+.tile-header {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.5); /* improvement: cross browser support */
+  text-align: center;
+  color: white;
+  box-sizing: border-box; /* improvement: cross browser support */
+}
