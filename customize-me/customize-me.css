@@ -1,0 +1,58 @@
+html, body {
+  font-family: Courier;
+  font-size: 20px;
+}
+
+.preview {
+  position: relative;
+  width: 448px;
+  height: 359px;
+  margin: 50px auto;
+}
+
+.text {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  width: 210px;
+  margin-left: -105px;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.customize-input {
+  display: block;
+  width: 500px;
+  height: 50px;
+  margin: 50px auto;
+  padding: 0 15px;
+  line-height: 50px;
+  font-family: Courier;
+  font-size: 20px;
+  box-sizing: border-box; /* improvement: cross browser support */
+}
+
+.customize-color-wrapper {
+  text-align: center;
+}
+
+.color  {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin: 5px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.color.red {
+  background-color: red;
+}
+
+.color.green {
+  background-color: green;
+}
+
+.color.blue {
+  background-color: blue;
+}
